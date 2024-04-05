@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black,
           appBar: AppBar(
             centerTitle: true,
-            backgroundColor:treecolor,
+            backgroundColor:pinkcolor,
             title: const Text(
-              'Launch Button',
+              'Dark Shadow Button',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -31,23 +31,24 @@ class MyApp extends StatelessWidget {
             alignment: Alignment.center,
             child: Container(
               alignment: Alignment.center,
-              height: 150,
+              height: 100,
               width: 150,
               decoration: BoxDecoration(
                 color: Colors.black,
-                border: Border.all(color: Colors.white, width: 1),
-                boxShadow: [
+                border: Border.all(color:pinkcolor, width: 1),
+                boxShadow:  [
                   BoxShadow(
-                    color: treecolor,
-                    spreadRadius: 7,
-                    blurRadius: 15,
+                    color:pinkcolor,
+                    spreadRadius: 6,
+                    blurRadius: 13,
                   ),
                 ],
-                shape: BoxShape.circle,
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                
               ),
               child: Text(
-                'GO',
-                style: TextStyle(color: Colors.white, fontSize: 32),
+                'Tap',
+                style: TextStyle(color: Colors.white, fontSize:36),
               ),
             ),
           )),

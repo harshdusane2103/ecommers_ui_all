@@ -15,5 +15,7 @@ Color litebluecolor=const Color(0xff64FFDA);
 
 Color pinkcolor=const Color(0xffE91E63);
 Color squarecolor=const Color(0xff009688);
-Color    side1color=const Color(0xff33ABA0);
+Color side1color=const Color(0xff33ABA0);
 Color side2color=const Color(0xff4DB6AC);
+
+Color fluttercolor=const Color(0xff48416A);

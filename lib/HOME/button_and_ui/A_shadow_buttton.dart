@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Colors.black,
+
           appBar: AppBar(
             centerTitle: true,
-            backgroundColor:treecolor,
+            backgroundColor:Colors.teal,
             title: const Text(
-              'Launch Button',
+              'A shadow Button',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -31,23 +31,24 @@ class MyApp extends StatelessWidget {
             alignment: Alignment.center,
             child: Container(
               alignment: Alignment.center,
-              height: 150,
-              width: 150,
+              height: 100,
+              width: 200,
               decoration: BoxDecoration(
-                color: Colors.black,
-                border: Border.all(color: Colors.white, width: 1),
-                boxShadow: [
+                color: Colors.white,
+                border: Border.all(color:Colors.teal, width: 1),
+                boxShadow:  [
                   BoxShadow(
-                    color: treecolor,
-                    spreadRadius: 7,
-                    blurRadius: 15,
+                    color:Colors.teal,
+                    spreadRadius: 6,
+                    blurRadius: 13,
                   ),
                 ],
-                shape: BoxShape.circle,
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+
               ),
               child: Text(
-                'GO',
-                style: TextStyle(color: Colors.white, fontSize: 32),
+                'Tap',
+                style: TextStyle(color: Colors.black, fontSize:36),
               ),
             ),
           )),

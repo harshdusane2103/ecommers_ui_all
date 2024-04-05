@@ -14,15 +14,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Colors.black,
+          backgroundColor:fluttercolor,
           appBar: AppBar(
             centerTitle: true,
-            backgroundColor:treecolor,
+            backgroundColor:Colors.black26,
             title: const Text(
-              'Launch Button',
+              'Gredient Button',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
+
                 // backgroundColor:
               ),
             ),
@@ -31,22 +32,24 @@ class MyApp extends StatelessWidget {
             alignment: Alignment.center,
             child: Container(
               alignment: Alignment.center,
-              height: 150,
-              width: 150,
+              height:100,
+              width: 200,
               decoration: BoxDecoration(
-                color: Colors.black,
-                border: Border.all(color: Colors.white, width: 1),
-                boxShadow: [
-                  BoxShadow(
-                    color: treecolor,
-                    spreadRadius: 7,
-                    blurRadius: 15,
-                  ),
-                ],
-                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 2.5),
+
+                gradient: const LinearGradient(
+                    colors: [
+                      Color(0xff8E33B7),
+                      Color(0xff6A54CB),
+                      Color(0xff2F89EB),
+                    ]
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
+
+
               ),
               child: Text(
-                'GO',
+                'Flutter',
                 style: TextStyle(color: Colors.white, fontSize: 32),
               ),
             ),

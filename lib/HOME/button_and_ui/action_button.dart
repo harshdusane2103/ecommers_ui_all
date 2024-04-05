@@ -14,15 +14,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Colors.black,
+
           appBar: AppBar(
             centerTitle: true,
-            backgroundColor:treecolor,
+            backgroundColor:pinkcolor,
             title: const Text(
-              'Launch Button',
+              'Action',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
+
                 // backgroundColor:
               ),
             ),
@@ -31,23 +32,33 @@ class MyApp extends StatelessWidget {
             alignment: Alignment.center,
             child: Container(
               alignment: Alignment.center,
-              height: 150,
-              width: 150,
+              height:100,
+              width: 200,
               decoration: BoxDecoration(
-                color: Colors.black,
-                border: Border.all(color: Colors.white, width: 1),
+
+
+                gradient: const LinearGradient(
+                    colors: [
+                      Color(0xffD94C91),
+                      Color(0xffFF4F6B),
+
+                    ]
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: treecolor,
-                    spreadRadius: 7,
-                    blurRadius: 15,
+                    color: Color(0xffEA4587),
+                    offset: Offset(0,10),
+                    blurRadius: 30,
+                    spreadRadius: 2,
                   ),
                 ],
-                shape: BoxShape.circle,
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
+
+
               ),
               child: Text(
-                'GO',
-                style: TextStyle(color: Colors.white, fontSize: 32),
+                'Call to Action',
+                style: TextStyle(color: Colors.white, fontSize: 24),
               ),
             ),
           )),
