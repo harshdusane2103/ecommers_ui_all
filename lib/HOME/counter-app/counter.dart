@@ -87,9 +87,19 @@ class _HomescreenState extends State<Homescreen> {
         backgroundColor: Colors.deepPurple,
         onPressed: () {
           setState(() {
-            count++;
-            sub--;
-            multi*=2;
+           if(count <=10000)
+
+             {
+               count++;
+             }
+           if(sub!=0)
+           {
+             sub--;
+           }
+           if(multi<=100000)
+           {
+             multi*=2;
+           }
           });
           print(count);
         },
