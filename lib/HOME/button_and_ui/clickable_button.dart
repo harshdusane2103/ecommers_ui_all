@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               alignment: Alignment.center,
 
             child: GestureDetector(
-              onDoubleTap: () {
+              onTap: () {
                 print("Hello flutter devloper  🙋‍♂️🙋‍♀️✋!");
               },
                 child: Container(
