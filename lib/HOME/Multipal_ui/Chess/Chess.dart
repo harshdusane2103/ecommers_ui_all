@@ -1,4 +1,4 @@
-import 'package:ecommers_ui_all/HOME/Multipal_ui/second_row.dart';
+import 'package:ecommers_ui_all/HOME/Multipal_ui/Chess/second_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

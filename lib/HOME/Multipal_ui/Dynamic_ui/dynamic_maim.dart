@@ -2,10 +2,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'callScreen.dart';
+import 'dynamic_ui.dart';
+
 
 void main() {
-  runApp(Myapp());
+  runApp(const Myapp());
 }
 
 class Myapp extends StatelessWidget {
@@ -13,10 +14,9 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: CallScreen(),
+    return const MaterialApp(
+      home: dynamicScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
