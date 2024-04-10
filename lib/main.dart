@@ -1,4 +1,5 @@
 
+import 'package:ecommers_ui_all/HOME/Dynamic/Dynamic_scfflod.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,28 +16,29 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
 
-      home: Scaffold(
-        appBar:  AppBar(
 
-          title:  Text('My RNW', style: TextStyle(color: Colors.white),),
-          centerTitle: true,
-          backgroundColor: Colors.red,
-
-        ),
-        body: const Center(
-          child: Text.rich(TextSpan(
-              children: [
-                TextSpan(text: 'Red & White\n',style:TextStyle(color: Colors.red,height:0.8,fontWeight:FontWeight.bold,fontSize:54,decoration:TextDecoration.underline,decorationColor:Colors.red,)),
-                TextSpan(text: '   Multimedia Education\n',style:TextStyle(color: Colors.red,fontWeight:FontWeight.normal,fontSize:24)),
-                TextSpan(text: 'Shaping "skills" for Scaling higher...!!! ',style:TextStyle(color: Colors.red,fontWeight:FontWeight.normal,fontSize:18)),
-              ]
-          )),
-        ),
-
-
-      ),
-
-
+      // home: Scaffold(
+      //   appBar:  AppBar(
+      //
+      //     title:  Text('My RNW', style: TextStyle(color: Colors.white),),
+      //     centerTitle: true,
+      //     backgroundColor: Colors.red,
+      //
+      //   ),
+      //   body: const Center(
+      //     child: Text.rich(TextSpan(
+      //         children: [
+      //           TextSpan(text: 'Red & White\n',style:TextStyle(color: Colors.red,height:0.8,fontWeight:FontWeight.bold,fontSize:54,decoration:TextDecoration.underline,decorationColor:Colors.red,)),
+      //           TextSpan(text: '   Multimedia Education\n',style:TextStyle(color: Colors.red,fontWeight:FontWeight.normal,fontSize:24)),
+      //           TextSpan(text: 'Shaping "skills" for Scaling higher...!!! ',style:TextStyle(color: Colors.red,fontWeight:FontWeight.normal,fontSize:18)),
+      //         ]
+      //     )),
+      //   ),
+      //
+      //
+      // ),
+      //
+      //
 
 
     );
