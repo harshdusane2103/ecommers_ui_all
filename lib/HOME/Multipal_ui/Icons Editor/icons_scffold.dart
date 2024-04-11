@@ -1,4 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'color_icon.dart';
+import 'color_list.dart';
+import 'iconlistuudf.dart';
+
 class iconEditScreen extends StatefulWidget {
   const iconEditScreen({super.key});
 
@@ -13,17 +19,19 @@ class _iconEditScreenState extends State<iconEditScreen> {
       return Scaffold(
         appBar: AppBar(
           leading: Icon(Icons.menu),
-          title: Text('Icons Editor', style: TextStyle(color: Colors.white),),
+          title: Text(
+            'Icons Editor',
+            style: TextStyle(color: Colors.white),
+          ),
           centerTitle: true,
           backgroundColor: Colors.blue,
           actions: [Icon(Icons.update)],
-
         ),
-
-
-        body:SingleChildScrollView(
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+
               Container(
                 margin: EdgeInsets.all(15),
                 height: 300,
@@ -33,66 +41,94 @@ class _iconEditScreenState extends State<iconEditScreen> {
                   border: Border.all(color: Colors.black, width: 2),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Icon(Icons.arrow_back,size: 36,),
-              ),
-              Container(
-                margin: EdgeInsets.all(15),
-                height: 50,
-                width: 370,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  border: Border.all(color: Colors.black, width: 2),
-                  borderRadius: BorderRadius.circular(20),
+                child: Icon(
+                  Icons.arrow_back,
+                  size: 36,
                 ),
-                alignment: Alignment.center,
-                child:Text('Select Color',style: TextStyle(color: Colors.black,fontSize: 36),),
               ),
-              Container(
-                margin: EdgeInsets.all(15),
+              colorudf(name: 'Select Color'),
 
-                height: 60,
-                width: 370,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  border: Border.all(color: Colors.black, width: 2),
-                  borderRadius: BorderRadius.circular(20),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(colorlist.length,
+                          (index) =>
+                          GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  Selectcolor = colorlist[index];
+                                });
+                              },
+                              child: colorbox(colorlist: colorlist[index]))),
                 ),
-                alignment: Alignment.center,
-                child: Text('Color',style: TextStyle(color: Colors.black,fontSize: 36),),
               ),
-              Container(
-                margin: EdgeInsets.all(15),
-                height: 50,
-                width: 370,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  border: Border.all(color: Colors.black, width: 2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                alignment: Alignment.center,
-                child: Text('Select Icon',style: TextStyle(color: Colors.black,fontSize: 36),),
-              ),
-              Container(
-                margin: EdgeInsets.all(15),
-                height: 60,
-                width: 370,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  border: Border.all(color: Colors.black, width: 2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              colorudf(name: 'Select Icon'),
+                  Container(
 
-                alignment: Alignment.center,
 
-                child: Text('Icon',style: TextStyle(color: Colors.black,fontSize: 36),),
-              ),
+                    child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: List.generate(
+                              iconlist.length,
+                                  (index) => GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    selectIcons = iconlist[index];
+                                  });
+                                },
+                                child: Iconbox(icon: iconlist[index]),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                  )
+                  ),
+
+
+
 
 
             ],
           ),
-        )
-        ,
+        ),
       );
     }
   }
+
+
+
+
+
+
 }
+
+
+
+List<Color> colorlist = [
+  Colors.blue,
+  Colors.purple,
+  Colors.green,
+  Colors.pinkAccent,
+  Colors.red,
+  Colors.orange,
+  Colors.brown,
+  Colors.teal,
+  Colors.amber,
+];
+List<IconData>iconlist=[
+  Icons.add_chart,
+  Icons.ice_skating,
+  Icons.inbox,
+  Icons.search,
+  Icons.confirmation_num_sharp,
+  Icons.insert_link,
+];
+
+Color Selectcolor = Colors.black;
+IconData selectIcons = Icons.arrow_back_ios_new;
+List coloriconlist=[];
+
