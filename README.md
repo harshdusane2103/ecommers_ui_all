@@ -41,5 +41,5 @@ samples, guidance on mobile development, and a full API reference.
   <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/map.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/Icons.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/dynamic.png" width=22% height=35% align=center>
-    <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/icon_editor.png" width=22% height=35% align=center>
+    <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/icon_hd.png" width=22% height=35% align=center>
 </p>
