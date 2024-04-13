@@ -1,4 +1,5 @@
 import 'package:ecommers_ui_all/utils/image.dart';
+import 'package:flutter/Material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -42,77 +43,118 @@ class _imageHomepageState extends State<imageHomepage> {
         ),
         actions: [
           Icon(
-            Icons.add_chart,
+            Icons.search,
             color: Colors.white,
           )
         ],
-        backgroundColor: Colors.blue,
+        backgroundColor:Colors.cyan.shade100,
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Column(
-          children: [
-            buger(),
-            buger(),
-            buger(),
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Row(
-                children: [buger(),buger(),
+      body:
 
-                ],
+          SingleChildScrollView(
+            // physics: BouncingScrollPhysics(decelerationRate: ),
+            child: Column(
+              children: List.generate(productlist.length, (index) =>Container(
+                margin: EdgeInsets.all(10),
+                height:370,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color:Colors.cyan.shade100,
+                    borderRadius: BorderRadius.circular(15),
+                    image:DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(productlist[index]['image']),
+
+                    )
+                ),
+
+                child:Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      children: [
+
+                        Container(
+                            // margin: EdgeInsets.only(top:320),
+                            height: 50,
+                            width: 360,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.black12,
+                            ),
+                            alignment: Alignment.bottomCenter,
+                            child:Row(
+
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                              children: [
+
+                                Text(productlist[index]['name'],style: TextStyle(color: Colors.white,fontSize: 28),),
+                                Text(productlist[index]['price'],style: TextStyle(color: Colors.white,fontSize: 28),)
+                              ],
+                            )
+
+                        )
+
+                      ],
+                    )
+                  ],
+                ),
+              ),),
               ),
-            )
-          ],
-        ),
-      ),
+
+
+
+          ),
+
+
+
+
+
     );
   }
 
-  Column buger() {
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.only(left: 15, right: 15, top: 15),
-          height: 370,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.redAccent,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(produt1),
-            ),
-          ),
-          // child: Image.network(produt1,fit: BoxFit.cover,),
-        ),
-        Container(
-          margin: EdgeInsets.only(left: 15, right: 15),
-          height: 80,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.grey.shade300,
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15)),
-          ),
-          child: Row(
-            children: [
-              Text('Pari-Pari Buger',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                  )),
-              Text('\nIn rupees 99',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                  )),
-            ],
-          ),
-        ),
-      ],
-    );
+  // Container food({required image ,required String name ,required String price}) {
+  //   return
   }
-}
+
+
+List productlist=
+[
+  {
+    'name':'Buger',
+    'price':'99',
+    'image':product1,
+  },
+  {
+    'name':'Pizza',
+    'price':'199',
+    'image':product2,
+  },
+  {
+    'name':'Pani puri',
+    'price':'29',
+    'image':product3,
+  },
+  {
+    'name':'Vada pav',
+    'price':'19',
+    'image':product4,
+  },
+  {
+    'name':'Masala Dosa',
+    'price':'99',
+    'image':product5,
+  },
+  {
+    'name':'Pasta',
+    'price':'156',
+    'image':product6,
+  },
+  {
+    'name':'Sandwich',
+    'price':'100',
+    'image':product7,
+  },
+
+];

@@ -91,16 +91,18 @@ List iconlist=[
     'icon':Icons.exit_to_app,
   },
   {
-    'name':'Exit',
-    'icon':Icons.exit_to_app,
+    'name':'Delet',
+    'icon':Icons.delete,
+  },
+  {
+    'name':'pause',
+    'icon':Icons.pause,
+  },
+  {
+    'name':'Play',
+    'icon':Icons.play_circle_sharp,
   },{
-    'name':'Exit',
-    'icon':Icons.exit_to_app,
-  },{
-    'name':'Exit',
-    'icon':Icons.exit_to_app,
-  },{
-    'name':'Exit',
-    'icon':Icons.exit_to_app,
+    'name':'Alaram',
+    'icon':Icons.alarm,
   },
 ];

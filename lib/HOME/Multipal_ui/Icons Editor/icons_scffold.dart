@@ -31,7 +31,6 @@ class _iconEditScreenState extends State<iconEditScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-
               Container(
                 margin: EdgeInsets.all(15),
                 height: 300,
@@ -42,71 +41,54 @@ class _iconEditScreenState extends State<iconEditScreen> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Icon(
-                  Icons.arrow_back,
+                  selectIcons,
+                  color: Selectcolor,
                   size: 36,
                 ),
               ),
               colorudf(name: 'Select Color'),
-
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: List.generate(colorlist.length,
-                          (index) =>
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  Selectcolor = colorlist[index];
-                                });
-                              },
-                              child: colorbox(colorlist: colorlist[index]))),
+                  children: List.generate(
+                      colorlist.length,
+                      (index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              Selectcolor = colorlist[index];
+                            });
+                          },
+                          child: colorbox(colorlist: colorlist[index]))),
                 ),
               ),
-              colorudf(name: 'Select Icon'),
-                  Container(
-
-
-                    child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Row(
-                            children: List.generate(
-                              iconlist.length,
-                                  (index) => GestureDetector(
+              colorudf(name: 'Select  Icon'),
+              Container(
+                child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15),
+                      child: Row(
+                        children: List.generate(
+                            iconlist.length,
+                            (index) => InkWell(
                                 onTap: () {
                                   setState(() {
                                     selectIcons = iconlist[index];
                                   });
                                 },
-                                child: Iconbox(icon: iconlist[index]),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                  )
-                  ),
-
-
-
-
-
+                                child: Iconbox(
+                                  icon: iconlist[index],
+                                ))),
+                      ),
+                    )),
+              ),
             ],
           ),
         ),
       );
     }
   }
-
-
-
-
-
-
 }
-
-
 
 List<Color> colorlist = [
   Colors.blue,
@@ -119,7 +101,7 @@ List<Color> colorlist = [
   Colors.teal,
   Colors.amber,
 ];
-List<IconData>iconlist=[
+List<IconData> iconlist = [
   Icons.add_chart,
   Icons.ice_skating,
   Icons.inbox,
@@ -130,5 +112,4 @@ List<IconData>iconlist=[
 
 Color Selectcolor = Colors.black;
 IconData selectIcons = Icons.arrow_back_ios_new;
-List coloriconlist=[];
-
+List coloriconlist = [];
