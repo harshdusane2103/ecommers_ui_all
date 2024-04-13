@@ -42,4 +42,8 @@ samples, guidance on mobile development, and a full API reference.
   <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/Icons.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/dynamic.png" width=22% height=35% align=center>
     <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/icon_hd.png" width=22% height=35% align=center>
+
+   <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/bolt.png" width=22% height=35% align=center>
+  <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/wall.png" width=22% height=35% align=center>
+    <img src="https://github.com/harshdusane2103/ecommers_ui_all/blob/master/spilter.png" width=22% height=35% align=center>
 </p>
