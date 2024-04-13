@@ -1,4 +1,5 @@
 import 'package:flutter/Material.dart';
+import'spilter_udf.dart';
 
 
 void main() {
@@ -44,18 +45,12 @@ class _SplitterscreenState extends State<Splitterscreen> {
             children: [
               Column(
                 children: [
-
-
                   firstcontenier(name: '1'),
                   firstcontenier(name: '2'),
                   firstcontenier(name: '3'),
                   firstcontenier(name: '4'),
                   firstcontenier(name: '5'),
-                  firstcontenier(name: '6'),
-                  firstcontenier(name: '7'),
-                  firstcontenier(name: '8'),
-                  firstcontenier(name: '9'),
-                  firstcontenier(name: '10'),
+
                 ],
               ),
               SingleChildScrollView(
