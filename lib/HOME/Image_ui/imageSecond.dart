@@ -6,6 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'food_udf.dart';
+import 'list.dart';
+
 void main() {
   runApp(const Myapp());
 }
@@ -33,158 +36,92 @@ class _imageHomepageState extends State<imageHomepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(
-          Icons.menu,
-          color: Colors.white,
-        ),
-        centerTitle: true,
-        title: Text(
-          'Food Zoon',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          Icon(
-            Icons.search,
+        appBar: AppBar(
+          leading: Icon(
+            Icons.menu,
             color: Colors.white,
-          )
-        ],
-        backgroundColor:Colors.cyan.shade100,
-      ),
-      body:
-
-      SingleChildScrollView(
-        // physics: BouncingScrollPhysics(decelerationRate: ),
-        child: Row(
-          children: [
-            // SingleChildScrollView (
-            //   scrollDirection: Axis.vertical,
-            //   child: Row(
-            //     children: [
-            //       ... [... List.generate(productlist.length, (index) => fdfirst(image: productlist[index]['image'], name:productlist[index]['name'], price: productlist[index]['price']))]
-            //     ],
-            //   ),
-            // ),
-            Row(
-              children: [
-                Column(
-
-                    children: [... List.generate(productlist.length, (index) => fdfirst(image: productlist[index]['image'], name:productlist[index]['name'], price: productlist[index]['price']))
-
-                  ],
-                ),
-                Column(
-                  children: [
-                ... List.generate(productlist.length, (index) => fdfirst(image: productlist[index]['image'], name:productlist[index]['name'], price: productlist[index]['price']))
-                  ],
-                )
-              ],
-            ),
-          ],
-        ),
-
-
-
-      ),
-
-
-
-
-
-    );
-  }
-
-  Container fdfirst({required image ,required String name ,required String price}) {
-    return Container(
-          margin: EdgeInsets.all(10),
-          height:172,
-          width: 172,
-          decoration: BoxDecoration(
-              color:Colors.cyan.shade100,
-              borderRadius: BorderRadius.circular(15),
-              image:DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(image),
-
-              )
           ),
-
-          child:Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+          centerTitle: true,
+          title: Text(
+            'Food Zoon',
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            Icon(
+              Icons.search,
+              color: Colors.white,
+            )
+          ],
+          backgroundColor: Colors.cyan.shade100,
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
             children: [
               Row(
+                children: [serachbar()],
+              ),
+              Row(
                 children: [
-
                   Container(
-                    // margin: EdgeInsets.only(top:320),
-                      height:170,
-                      width: 170,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.black12,
-                      ),
-                      alignment: Alignment.bottomCenter,
-                      child:Row(
-
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                        children: [
-
-                          Text(name,style: TextStyle(color: Colors.white,fontSize:20),),
-                          Text(price,style: TextStyle(color: Colors.white,fontSize: 20),)
-                        ],
-                      )
-
-                  )
-
+                    margin: EdgeInsets.all(16),
+                    height: 350,
+                    width: 350,
+                    // decoration: BoxDecoration(
+                    //   color: Colors.grey.shade200,
+                    // ),
+                    child: ListView(
+                      // This next line does the trick.
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        slider(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ...List.generate(productlist.length, (index) {
+                      return fdfirst(
+                        image: productlist[index]['image'],
+                        name: productlist[index]['name'],
+                      );
+                    })
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      ...List.generate(
+                          productSecondlist.length,
+                          (index) => boxSecond(
+                              image: productSecondlist[index]['image'],
+                              name: productSecondlist[index]['name'],
+                              price: productSecondlist[index]['price']))
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ...List.generate(
+                          productThirdlist.length,
+                          (index) => boxSecond(
+                              image: productThirdlist[index]['image'],
+                              name: productThirdlist[index]['name'],
+                              price: productThirdlist[index]['price']))
+                    ],
+                  ),
                 ],
               )
             ],
           ),
-        );
+        ));
   }
 
 // Container food({required image ,required String name ,required String price}) {
 //   return
 }
-
-
-List productlist=
-[
-  {
-    'name':'Buger',
-    'price':'99',
-    'image':product1,
-  },
-  {
-    'name':'Pizza',
-    'price':'199',
-    'image':product2,
-  },
-  {
-    'name':'Pani puri',
-    'price':'29',
-    'image':product3,
-  },
-  {
-    'name':'Vada pav',
-    'price':'19',
-    'image':product4,
-  },
-  {
-    'name':'Masala Dosa',
-    'price':'99',
-    'image':product5,
-  },
-  {
-    'name':'Pasta',
-    'price':'156',
-    'image':product6,
-  },
-  {
-    'name':'Sandwich',
-    'price':'100',
-    'image':product7,
-  },
-
-];

@@ -24,21 +24,13 @@ Row Call_Screen({required String letter,required String name}) {
               width: 50,
               height: 50,
               decoration: const BoxDecoration(
-                color: Colors.black,
+                color: Colors.white24,
                 shape: BoxShape.circle,
               ),
               alignment: Alignment.topLeft,
               child: Row(
                 children: [
-                  Text(
-                      letter,
-                      style: TextStyle(color: Colors.white),
-
-                    ),
-                    SizedBox(width:10,),
-                    Text(name,style:TextStyle(color: Colors.black,),),
-
-                    Icon(Icons.call),
+                  Icon(Icons.update,color: Colors.white,),
 
 
                 ],

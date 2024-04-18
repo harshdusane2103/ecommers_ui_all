@@ -1,5 +1,8 @@
 import 'package:flutter/Material.dart';
-import'spilter_udf.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
 
 
 void main() {
@@ -29,7 +32,8 @@ class _SplitterscreenState extends State<Splitterscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+
+      backgroundColor: Colors.orange,
       appBar: AppBar(
         backgroundColor: Colors.black,
 
@@ -38,47 +42,77 @@ class _SplitterscreenState extends State<Splitterscreen> {
           style: TextStyle(color: Colors.white, fontSize: 32),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  firstcontenier(name: '1'),
-                  firstcontenier(name: '2'),
-                  firstcontenier(name: '3'),
-                  firstcontenier(name: '4'),
-                  firstcontenier(name: '5'),
+      body: Column(
+        children: [
+            Expanded(
+              flex: 5,
+              child: Container(
+                height: double.infinity,
+                // width: 100,
+                color: Colors.orange,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
 
-                ],
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    secondcontenier(name: '11'),
-                    secondcontenier(name: '12'),
-                    secondcontenier(name: '13'),
-                    secondcontenier(name: '14'),
-                    secondcontenier(name: '15'),
-                    secondcontenier(name: '16'),
-                    secondcontenier(name: '17'),
-                    secondcontenier(name: '18'),
-                    secondcontenier(name: '19'),
-                    secondcontenier(name: '20'),
-
-
-                  ],
+                      ... List.generate(11, (index) => colunmtx(number:1+index)),
+                    ],
+                  ),
                 ),
-              )
+              ),
 
-            ],
-          ),
-        ),
-      ),
+            ),
+           Expanded(
+             flex: 2,
+             child: Container(
+               // height: 100,
+               width: double.infinity,
+               color: Colors.red,
+               child: SingleChildScrollView(
+                 scrollDirection: Axis.horizontal,
+                 child: Row(
+                   children: [
+                      ... List.generate(11, (index) =>rowtx(number:1+index)),
+                   ],
+                 ),
+               ),
+             ),
+           )
+
+        ],
+      )
     );
+  }
+
+  Container rowtx({required int number}) {
+    return Container(
+                   margin: EdgeInsets.only(left: 2,right: 4),
+                   height:80,
+                   width:200,
+                   decoration:BoxDecoration(
+                     color: Colors.blue,
+                     borderRadius:BorderRadius.circular(10),
+                   ),
+                   alignment: Alignment.center,
+                   child:Text('$number',style: TextStyle(fontSize: 32),),
+                 );
+  }
+
+  Container colunmtx({required int number}) {
+    return Container(margin: EdgeInsets.only(top:4),
+                    height:80,
+                    width:200,
+                    decoration:BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius:BorderRadius.circular(10),
+                    ),
+                    alignment: Alignment.center,
+                    child:Text('$number',style: TextStyle(fontSize: 32),),
+
+
+                  );
   }
 
 
 }
+int number=1;

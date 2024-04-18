@@ -1,3 +1,4 @@
+import 'package:flutter/Material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -39,20 +40,34 @@ class _CallScreenState extends State<CallScreen> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            Row(
+      body:
 
-              children:
-                 List.generate(boxlist.length, (index) => boxlist[index]),
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+
+                      children:
+                         List.generate(boxlist.length, (index) => boxlist[index]),
 
 
+                    ),
+                  ),
+                  Column(
+                    children: [
+                     ...  List.generate(boxlist.length, (index) => boxlist[index]),
+
+                    ],
+                  )
+                ],
+              ),
             ),
-          ],
-        ),
-      ),
+
+
+
     );
   }
 
